@@ -3,6 +3,7 @@ PGraphics pg[] = new PGraphics[frames];
 PImage img;
 MovingLines movln;
 Fog fog1;
+private ImageArrayZoomer zoomer;
 
 void setup() {
   size(640, 382);
@@ -11,6 +12,7 @@ void setup() {
   
   img = loadImage("/Users/ramya/Documents/Processing/Adiyogi/Data/Adi10.jpeg");
   fog1 = new Fog(img);
+  zoomer = new ImageArrayZoomer("Data", "Adi", 12, ".jpg", 1);
 }
 
 void draw() {
@@ -28,7 +30,5 @@ void draw() {
  {
       fog1.show();
  }
- if ()
- {
- }
+ zoomer.draw();
 }

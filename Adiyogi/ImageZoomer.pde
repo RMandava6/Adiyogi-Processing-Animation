@@ -26,22 +26,27 @@ public class ImageArrayZoomer {
   
   public void draw() {
 
-    sleep(70);
+    //sleep(50);
+    //delay(3000);
     if(width> image.width && height > image.height)
     {
       int newWidth = image.width + 1;
       int newHeight = image.height + 1;
       image.resize(newWidth, newHeight);
-      image(image,0,0);
+      imageMode(CENTER);
+      image(image, width/2, height/2);
     } else {
       //tint(200);
       current = (current +1) % numberOfImages;
       //int previousImageWidth = image.width;
       //int previousImageHeight = image.height;
+      //delay(3000);
       image = loadMyImage(String.valueOf(current));
       //noTint();
-      sleep(50);
+      //sleep(5000);
       image(image,0,0);
+      //sleep(5000);
+      //delay(3000);
       //blend(image, 0, 0, previousImageWidth, previousImageHeight, 0, 0, image.width, image.height, DARKEST);
     }
     

@@ -4,14 +4,14 @@ PImage img;
 MovingLines movln;
 Fog fog1;
 
-private ImageArrayZoomer zoomer;
+private ImageArrayZoomer1 zoomer;
 void setup() {
   size(640, 382); //640, 382
   smooth(2);
   //movln = new MovingLines();
   
   //img = loadImage("Data/Adi10.jpeg");
-  zoomer = new ImageArrayZoomer("Data", "Adi", 12, ".jpg", 5);
+  zoomer = new ImageArrayZoomer1("Data", "Adi", 12, ".jpg", 5);
   //fog1 = new Fog(img);
 }
 

@@ -13,7 +13,7 @@ void setup() {
   smooth(2);
   
   //Loading and initializing image objects
-  img = loadImage("/Users/ramya/Documents/GitHub/Adiyogi-Processing-Animation/Data");
+  img = loadImage("/Users/ramya/Documents/GitHub/Adiyogi-Processing-Animation/Adiyogi/Data/Adi10.jpeg");
   zoomer = new ImageArrayZoomer("Data", "Adi", 12, ".jpg", 1);
   
   //Initializing all other objects
@@ -27,7 +27,7 @@ void setup() {
 void draw() {
  background(0);
  surface.setTitle(mouseX + ", " + mouseY);
- image(img, 166, 90);
+ //image(img, 166, 90);
  
  if(key == 's' || key == 'S')
  {
@@ -54,6 +54,7 @@ void draw() {
  
  if (key == 'd' || key == 'D') 
  {
+   background(0);
    zoomer.draw();
  }//end of if images draw
  

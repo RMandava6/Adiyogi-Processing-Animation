@@ -44,7 +44,8 @@ public class ImageArrayZoomer {
       image = loadMyImage(String.valueOf(current));
       //noTint();
       //sleep(5000);
-      image(image,0,0);
+      imageMode(CENTER);
+      image(image,width/2, height/2);
       sleep(5000);
       //delay(3000);
       //blend(image, 0, 0, previousImageWidth, previousImageHeight, 0, 0, image.width, image.height, DARKEST);

@@ -45,7 +45,7 @@ public class ImageArrayZoomer {
       //noTint();
       //sleep(5000);
       image(image,0,0);
-      //sleep(5000);
+      sleep(5000);
       //delay(3000);
       //blend(image, 0, 0, previousImageWidth, previousImageHeight, 0, 0, image.width, image.height, DARKEST);
     }

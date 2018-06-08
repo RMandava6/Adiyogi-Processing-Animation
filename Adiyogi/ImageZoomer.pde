@@ -6,49 +6,60 @@ public class ImageArrayZoomer {
  //private boolean isLandscape;
  private PImage image;
  private int numberOfImages;
+ private int startValue;
  private String folder; 
  private String imagePrefix;
  private String imageSuffix;
+ private int counter;
   
-  public ImageArrayZoomer(String folder, String imagePrefix, int numberOfImages, String imageSuffix, int motionSpeed) {
+  public ImageArrayZoomer(String folder, String imagePrefix, int numberOfImages, int startValue, String imageSuffix, int motionSpeed) {
    this.folder = folder;
    this.imagePrefix = imagePrefix;
    this.imageSuffix = imageSuffix;
    this.numberOfImages = numberOfImages;
+   this.startValue = startValue;
    this.motionSpeed = motionSpeed;
    init();
   }
   
   private void init() {
-    current = 0;
+    current = this.startValue;
     this.image = loadMyImage(String.valueOf(current)); 
   }
   
   public void draw() {
 
     //sleep(50);
-    //delay(3000);
-    if(width> image.width && height > image.height)
+    if(counter == 1)
+    {
+      if(motionSpeed<10){
+      delay(3000);
+      }
+      counter =0;
+    }
+    if(width> image.width || height > image.height)
     {
       int newWidth = image.width + 1;
       int newHeight = image.height + 1;
       image.resize(newWidth, newHeight);
       imageMode(CENTER);
+      //tint(255, 100);
       image(image, width/2, height/2);
+      
     } else {
       //tint(200);
-      current = (current +1) % numberOfImages;
-      //int previousImageWidth = image.width;
-      //int previousImageHeight = image.height;
-      //delay(3000);
+      counter = 0;
+      if(this.startValue ==0){
+        current = (current +1) % numberOfImages;
+      }
+      else{
+        current = ((current +1) % numberOfImages) + numberOfImages;
+      }
       image = loadMyImage(String.valueOf(current));
-      //noTint();
-      //sleep(5000);
       imageMode(CENTER);
       image(image,width/2, height/2);
-      sleep(5000);
-      //delay(3000);
-      //blend(image, 0, 0, previousImageWidth, previousImageHeight, 0, 0, image.width, image.height, DARKEST);
+      //sleep(5000);
+      counter++;
     }
     
   }

@@ -7,14 +7,18 @@ Fog fog1;
 Stars[] stars = new Stars[400];
 
 private ImageArrayZoomer zoomer;
+private ImageArrayZoomer zoomer1;
+private ImageArrayZoomer zoomer2;
 
 void setup() {
   size(640, 382);
   smooth(2);
   
   //Loading and initializing image objects
-  img = loadImage("/Users/ramya/Documents/GitHub/Adiyogi-Processing-Animation/Adiyogi/Data/Adi10.jpeg");
-  zoomer = new ImageArrayZoomer("Data", "Adi", 12, ".jpg", 1);
+  img = loadImage("/Users/ramya/Documents/GitHub/Adiyogi-Processing-Animation/Adiyogi/Data/Adiyogi.jpg");
+  zoomer = new ImageArrayZoomer("Data", "Adi", 12, 0, ".jpg", 1); 
+  zoomer1 = new ImageArrayZoomer("Data", "Adi", 10, 12, ".jpg", 1);
+  zoomer2 = new ImageArrayZoomer("Data", "Adi", 10, 12, ".jpg", 10);
   
   //Initializing all other objects
   for(int i = 0; i<stars.length; i++){
@@ -43,6 +47,7 @@ void draw() {
  
  if (key == 'f' || key == 'F') 
  {
+   imageMode(CORNER);
    image(img, 166, 90);
    fog1.show();
  }//end of if fog
@@ -57,6 +62,20 @@ void draw() {
    background(0);
    zoomer.draw();
  }//end of if images draw
+ 
+ if (key == 'g' || key == 'G') 
+ {
+   background(0);
+   zoomer1.draw();
+ }//end of if images draw
+ 
+ 
+ if (key == 'e' || key == 'E') 
+ {
+   background(0);
+   zoomer2.draw();
+ }//end of if images draw
+ 
  
  if(key == 'o' || key == 'O')
  {

@@ -22,6 +22,7 @@ public class MovingLines
       pg[currFrame].line(mouseX, mouseY, pmouseX, pmouseY);
       pg[currFrame].endDraw();
     }//end of if
+    imageMode(CENTER);
     image(pg[currFrame], 0, 0);
   }//end of function show
 }

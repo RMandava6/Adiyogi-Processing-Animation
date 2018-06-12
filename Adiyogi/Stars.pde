@@ -1,3 +1,4 @@
+//Case and Ben tutorial on star field
 public class Stars {
   
   float x;

@@ -1,3 +1,4 @@
+//References: Case and Ben tutorial on Perlin noise
 public class Fog
 {
   

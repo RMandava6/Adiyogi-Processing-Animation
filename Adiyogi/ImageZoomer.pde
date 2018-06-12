@@ -10,7 +10,7 @@ public class ImageArrayZoomer {
  private String folder; 
  private String imagePrefix;
  private String imageSuffix;
- private int counter;
+ private int counter=0;
   
   public ImageArrayZoomer(String folder, String imagePrefix, int numberOfImages, int startValue, String imageSuffix, int motionSpeed) {
    this.folder = folder;
@@ -33,7 +33,7 @@ public class ImageArrayZoomer {
     if(counter == 1)
     {
       if(motionSpeed<10){
-      delay(3000);
+      delay(4000);
       }
       counter =0;
     }

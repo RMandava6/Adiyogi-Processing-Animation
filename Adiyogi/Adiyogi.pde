@@ -1,3 +1,4 @@
+// References: Isha institue of Inner sciences (Images and content)
 int frames = 20;
 float speed;
 PGraphics pg[] = new PGraphics[frames];
@@ -30,7 +31,7 @@ void setup() {
 
 void draw() {
  background(0);
- surface.setTitle(mouseX + ", " + mouseY);
+ //surface.setTitle(mouseX + ", " + mouseY);
  //image(img, 166, 90);
  
  if(key == 's' || key == 'S')
